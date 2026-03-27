@@ -8,9 +8,15 @@ public class InverterValor {
         System.out.println("Digite um numero: ");
         valor = sc.nextInt();
 
-        valorInvertido = inversorDeValor(valor);
+        if (valor == 000) {
+            System.out.println("Favor inserir um numero diferente de 0");
+        } else if (valor > 999 || valor < 99) {
+            System.out.println("Favor inserir um numero de 3 digitos");
+        } else {
+            valorInvertido = inversorDeValor(valor);
 
-        System.out.println("Seu valor invertido e: " + valorInvertido);
+            System.out.println("Seu valor invertido e: " + valorInvertido);
+        }
 
         sc.close();
     }
