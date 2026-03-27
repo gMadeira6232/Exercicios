@@ -24,6 +24,8 @@ public class SalarioInss {
 
 
         System.out.printf("O valor do salario liquido é de R$: %.2f", salarioLiquido);
+
+        sc.close();
     }
 
     //  METODO 1
