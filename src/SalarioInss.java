@@ -6,7 +6,7 @@ public class SalarioInss {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
 
-        double valorHoraAula, horasTrabalhadas, descontoInss, valorBruto, porcentagemInss, salarioLiquido;
+        double valorHoraAula, horasTrabalhadas,porcentagemInss, salarioLiquido;
 
         System.out.println("Digite o valor da hora-aula: ");
         valorHoraAula = sc.nextDouble();
@@ -17,33 +17,16 @@ public class SalarioInss {
         System.out.println("Digite o valor da porcentagem de desconto INSS: ");
         porcentagemInss = sc.nextDouble();
 
-        porcentagemInss = calculadoraPorcentagem(porcentagemInss);
-        valorBruto = calculadoraValorBruto(valorHoraAula, horasTrabalhadas);
-        descontoInss = calculadoraDescontoInss(valorBruto, porcentagemInss);
-        salarioLiquido = calculadoraSalarioLiquido(valorBruto, descontoInss);
-
+        salarioLiquido = calculadoraSalarioLiquido(porcentagemInss / 100, valorHoraAula, horasTrabalhadas);
 
         System.out.printf("O valor do salario liquido é de R$: %.2f", salarioLiquido);
 
         sc.close();
     }
-
-    //  METODO 1
-    public static double calculadoraPorcentagem(double porcentagemInss) {
-        return porcentagemInss = porcentagemInss / 100;
-    }
-
-    //  METODO 2
-    public static double calculadoraValorBruto(double valorHoraAula, double horasTrabalhadas) {
-        return valorHoraAula * horasTrabalhadas;
-    }
-
-    //  METODO 3
-    public static double calculadoraDescontoInss(double valorBruto, double porcentagemInss) {
-        return valorBruto * porcentagemInss;
-    }
     //  METODO 4
-    public static double calculadoraSalarioLiquido(double valorBruto, double descontoInss) {
-        return valorBruto - descontoInss;
+    public static double calculadoraSalarioLiquido(double porcentagemInss, double valorHoraAula, double horasTrabalhadas) {
+        double salBruto = valorHoraAula * horasTrabalhadas;
+        double descontoInss = salBruto * porcentagemInss;
+        return salBruto - descontoInss;
     }
 }
