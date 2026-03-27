@@ -12,11 +12,11 @@ public class CalculoCombustivel {
         System.out.println("Informe a velocidade media (km/h): ");
         velocidade = sc.nextDouble();
 
-        sc.close();
-
         consumo = calculadoraConsumo(velocidade, tempo);
 
         System.out.printf("A quantidade de combustível gasta sera de: %.2f %s", consumo, "Litros");
+
+        sc.close();
     }
 
     // METODO
