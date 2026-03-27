@@ -14,19 +14,14 @@ public class CalculoCombustivel {
 
         sc.close();
 
-        distancia = calculadoraDistancia(velocidade, tempo);
-        consumo = calculadoraConsumo(distancia);
+        consumo = calculadoraConsumo(velocidade, tempo);
 
-        System.out.println("A quantidade de combustível gasta sera de: " + consumo + " Litros");
+        System.out.printf("A quantidade de combustível gasta sera de: %.2f %s", consumo, "Litros");
     }
 
-    // METODO 1
-    public static double calculadoraDistancia(double velocidade, int tempo) {
-        return velocidade * tempo;
-    }
-
-    // METODO 2
-    public static double calculadoraConsumo(double distancia) {
+    // METODO
+    public static double calculadoraConsumo(double velocidade, double tempo) {
+        double distancia = velocidade * tempo;
         return distancia / 10.5;
     }
 }
