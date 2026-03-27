@@ -23,7 +23,7 @@ public class SalarioInss {
 
         sc.close();
     }
-    //  METODO 4
+    //  METODO
     public static double calculadoraSalarioLiquido(double porcentagemInss, double valorHoraAula, double horasTrabalhadas) {
         double salBruto = valorHoraAula * horasTrabalhadas;
         double descontoInss = salBruto * porcentagemInss;
